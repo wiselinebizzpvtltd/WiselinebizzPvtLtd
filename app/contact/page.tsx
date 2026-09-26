@@ -191,7 +191,7 @@ export default function ContactPage() {
                   <ContactCard
                     icon={<LocationIcon />}
                     label="Location"
-                    value="Bramhacorp Business Park, Wadgaon Sheri, Pune, Maharashtra 411014"
+                    value="1106, Bramhacorp Business Park, Next to Bramhacorp The Collection, Wadgaon Sheri, Pune, Maharashtra 411014, India"
                   />
                 </div>
 

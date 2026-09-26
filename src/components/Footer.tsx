@@ -216,19 +216,20 @@ export default function Footer() {
                 </div>
 
                 <p className="text-sm leading-6 text-white/45">
-                  Bramhacorp Business Park,
+                  1106, Bramhacorp Business Park,
                   <br />
                   Next to Bramhacorp The Collection,
                   <br />
                   Wadgaon Sheri, Pune,
                   <br />
-                  Maharashtra 411014
+                  Maharashtra 411014, India
                 </p>
               </div>
 
+
               {/* Email */}
               <a
-                href="mailto:contact@wiselinebizz.com"
+                href="mailto:contactus@wiselinebizz.com"
                 className="group flex items-center gap-3"
               >
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04]">
@@ -245,7 +246,7 @@ export default function Footer() {
                 </div>
 
                 <span className="text-sm text-white/45 transition-colors group-hover:text-cyan-300">
-                  contact@wiselinebizz.com
+                  contactus@wiselinebizz.com
                 </span>
               </a>
 
