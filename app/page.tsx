@@ -1,69 +1,172 @@
-import Image from "next/image";
+import ClientSuccessStories from "@/src/components/ClientSuccessStories";
+import App from "@/src/components/ExpertiseAnimation";
+import ExpertiseStatement from "@/src/components/ExpertiseStatement";
+import Footer from "@/src/components/Footer";
+import { Hero } from "@/src/components/Hero";
+import Industries from "@/src/components/Industries";
+import Integrations from "@/src/components/Integrations";
+import OurProcess from "@/src/components/OurProcess";
+import Services from "@/src/components/Services";
+import TrustedExcellence from "@/src/components/TrustedExcellence";
+import WhyChooseUs from "@/src/components/WhyChooseUs";
+import Counter from "@/src/services/CounterService";
+import Link from "next/link";
+import ParallaxEffect from "./../src/components/Parallax";
+
+const solutions = [
+  {
+    title: "Dynamics 365 CRM",
+    description: "Complete implementation",
+    icon: (
+      <svg
+        className="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"
+        />
+        <circle cx="9" cy="7" r="4" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"
+        />
+      </svg>
+    ),
+    iconBg: "bg-cyan-500",
+  },
+  {
+    title: "Azure Cloud",
+    description: "Secure infrastructure",
+    icon: (
+      <svg
+        className="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+        />
+      </svg>
+    ),
+    iconBg: "bg-emerald-500",
+  },
+  {
+    title: "AI Automation",
+    description: "Smart workflows",
+    icon: (
+      <svg
+        className="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
+        />
+      </svg>
+    ),
+    iconBg: "bg-orange-500",
+  },
+];
+
+const stats = [
+  {
+    value: "15+",
+    label: "Projects Delivered",
+  },
+  {
+    value: "98%",
+    label: "Client Satisfaction",
+  },
+  {
+    value: "24/7",
+    label: "Support Available",
+  },
+];
+
+const benefits = [
+  {
+    number: "01",
+    title: "Business First",
+    description:
+      "We understand your business requirements before designing the right technology solution.",
+  },
+  {
+    number: "02",
+    title: "Microsoft Expertise",
+    description:
+      "Deep expertise across Dynamics 365, Azure, Power Platform and modern enterprise technologies.",
+  },
+  {
+    number: "03",
+    title: "Scalable Solutions",
+    description:
+      "Solutions designed to grow with your business while maintaining security, performance and reliability.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="min-h-screen bg-white text-slate-900">
+
+      <Hero/>
+
+      {/* Industries */}
+      <section>
+           <Industries/>
+      </section>
+
+      {/* Trusted Excellence */}
+      <section>
+        <TrustedExcellence/>
+      </section>
+
+      {/* Expertise Statement */}
+      <section>
+          <ExpertiseStatement/>
+      </section>
+
+      {/* Services */}
+      <section className="">
+        <Services/>
+      </section>
+    
+      {/* Why Choose Us */}
+      <section>
+        <WhyChooseUs/>
+      </section>
+
+      {/* Our Process */}
+      <section>
+        <OurProcess/>
+      </section>
+
+      {/* Integrations  Technologies */}
+      <section>
+        <Integrations/>
+      </section>
+
+      {/* Client Success Stories */}
+      <section>
+        <ClientSuccessStories/>
+      </section>
+
+      <section>
+        <Footer/>
+      </section>
+    </main>
   );
 }
